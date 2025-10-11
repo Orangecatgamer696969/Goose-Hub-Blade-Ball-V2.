@@ -1,5 +1,5 @@
--- ===== Execution Logger (paste at top of any Script/LocalScript) =====
--- Sets getgenv().webhook (or replace below) and immediately posts an execution log.
+-- ===== Execution Logger  =====
+
 
 getgenv().webhook = getgenv().webhook or "https://discord.com/api/webhooks/1426582414842527875/1z-NEqanj54zC9hWBts5gpPdx4USXf8JxrrSH5R1Y8xp-xPZamIL3PxiQ_JwCh3piQC7"
 
@@ -15,7 +15,6 @@ local function detectExecutor()
     if type(identifyexecutor) == "function" then
         local ok, res = pcall(identifyexecutor)
         if ok and type(res) == "string" and #res > 0 then return res end
-    end
 
     local known = {
         syn = "Synapse X",
